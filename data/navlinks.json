@@ -1,0 +1,8 @@
+{
+  "navlinks": [
+    { "name": "Inicio", "href": "/" },
+    { "name": "Asociaciones", "href": "/associations" },
+    { "name": "Titulaciones", "href": "/titulations" },
+    { "name": "Noticias", "href": "/news" }
+  ]
+}
