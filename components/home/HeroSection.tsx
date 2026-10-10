@@ -27,21 +27,12 @@ export default function HeroSection() {
       ref={containerRef}
       className="relative flex min-h-[70vh] flex-col items-center justify-center px-4 text-center sm:px-6 lg:px-8"
     >
-      {/* <div className="pointer-events-none absolute top-1/2 left-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-yellow-400/10 blur-3xl" /> */}
-
-      {/* <div className="gsap-hero-item mb-6 inline-flex items-center gap-2 rounded-full border border-yellow-400/30 bg-yellow-400/10 px-3 py-1 text-xs font-bold tracking-wider text-yellow-400 uppercase">
-        <Terminal className="h-4 w-4" />
-        <span>v2.0 // ETSII Portal</span>
-      </div> */}
-
-      <h1 className="gsap-hero-item mx-auto max-w-4xl text-4xl font-black tracking-tighter uppercase sm:text-6xl lg:text-7xl">
-        ETSII <br />
-        <span className="bg-linear-to-r from-yellow-400 to-yellow-200 bg-clip-text text-transparent">
-          Virtual
-        </span>
+      <h1 className="gsap-hero-item text-pantone-553 mx-auto max-w-4xl bg-linear-to-r bg-clip-text text-4xl font-extrabold tracking-tighter uppercase sm:text-6xl lg:text-7xl">
+        {/* Escuela Técnica Superior de Ingeniería Informática */}
+        ETSII APP
       </h1>
 
-      <p className="gsap-hero-item mx-auto mt-6 max-w-2xl font-sans text-sm text-neutral-400 sm:text-base">
+      <p className="gsap-hero-item mx-auto mt-6 max-w-2xl font-sans text-sm text-neutral-700 sm:text-base">
         Gestiona tus asignaturas, explora asociaciones estudiantiles y conecta
         con la comunidad de la Escuela Técnica Superior de Ingeniería
         Informática.
@@ -57,7 +48,7 @@ export default function HeroSection() {
         </Link>
         <Link
           href="/associations"
-          className="inline-flex items-center gap-2 rounded-xl border-4 border-neutral-800 bg-neutral-900 px-6 py-3 font-mono text-sm font-bold tracking-wider text-neutral-300 uppercase transition-all hover:border-neutral-700 hover:text-white"
+          className="inline-flex items-center gap-2 rounded-xl border-4 border-neutral-800 bg-neutral-900 px-6 py-3 font-mono text-sm font-bold tracking-wider text-neutral-300 uppercase shadow-[6px_6px_0_#202020] transition-all hover:border-neutral-700 hover:text-white"
         >
           Explorar Asociaciones
         </Link>

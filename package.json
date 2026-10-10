@@ -19,7 +19,7 @@
     "vinext": "^1.0.0"
   },
   "devDependencies": {
-    "@cloudflare/vite-plugin": "2.0.0-beta.sha-ad79608dd",
+    "@cloudflare/vite-plugin": "2.0.0-beta.sha-52b0dc0e9",
     "@tailwindcss/postcss": "latest",
     "@types/mdx": "^2.0.14",
     "@types/node": "latest",
@@ -27,7 +27,7 @@
     "@types/react-dom": "latest",
     "@vitejs/plugin-react": "^6.1.1",
     "@vitejs/plugin-rsc": "^0.5.35",
-    "cf": "1.0.0-beta.5",
+    "cf": "1.0.0-beta.13",
     "prettier": "3.9.9",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "tailwindcss": "latest",
@@ -39,6 +39,10 @@
     "dev": "vite dev",
     "build": "vite build",
     "start": "vite preview",
-    "deploy": "vinext-cloudflare deploy"
+    "deploy": "vinext-cloudflare deploy",
+    "dev:vinext": "vite dev --port 3001",
+    "build:vinext": "vite build",
+    "start:vinext": "vite preview",
+    "deploy:vinext": "vinext-cloudflare deploy"
   }
 }

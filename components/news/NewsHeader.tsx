@@ -39,7 +39,7 @@ export default function NewsHeader() {
 
       <div className="gsap-masthead flex justify-center py-4">
         <h1 className="font-serif text-5xl font-black tracking-tighter text-neutral-950 uppercase sm:text-7xl md:text-8xl lg:text-9xl">
-          ETSII <span className="text-purple-600 italic">News</span>
+          ETSII <span className="text-pantone-124 italic">News</span>
         </h1>
       </div>
 

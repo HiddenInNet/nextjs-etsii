@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+@theme {
+    --color-pantone-553: #293452;
+    --color-pantone-542: #6599c1;
+    --color-pantone-124: #e0ad13;
+    --color-pantone-201: #a71c39;
+}

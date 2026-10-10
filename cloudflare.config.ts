@@ -4,7 +4,7 @@ export default defineConfig({
   worker: defineWorker({
     name: "nextjs-etsii",
     entrypoint: "vinext/server/fetch-handler",
-    compatibilityDate: "2026-09-28",
+    compatibilityDate: "2026-10-03",
     compatibilityFlags: ["nodejs_compat"],
     assets: { notFoundHandling: "none" },
     env: {

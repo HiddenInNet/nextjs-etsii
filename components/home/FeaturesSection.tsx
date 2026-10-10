@@ -58,15 +58,15 @@ export default function FeaturesSection() {
           return (
             <div
               key={index}
-              className="gsap-feature-card flex flex-col justify-between overflow-hidden rounded-2xl border-4 border-neutral-900 bg-neutral-900/60 p-6 shadow-[6px_6px_0_#202020] transition-colors hover:border-yellow-400/50"
+              className="gsap-feature-card flex flex-col justify-between overflow-hidden rounded-2xl border-4 border-neutral-900 bg-neutral-100 p-6 shadow-[6px_6px_0_#202020] transition-colors hover:border-yellow-400/50"
             >
               <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl border-2 border-yellow-400 bg-yellow-400/10 text-yellow-400">
                 <Icon className="h-6 w-6" />
               </div>
-              <h3 className="mb-2 font-mono text-xl font-bold tracking-wide text-white uppercase">
+              <h3 className="mb-2 font-mono text-xl font-bold tracking-wide text-neutral-800 uppercase">
                 {item.title}
               </h3>
-              <p className="font-sans text-sm leading-relaxed text-neutral-400">
+              <p className="font-sans text-sm leading-relaxed text-neutral-600">
                 {item.desc}
               </p>
             </div>
