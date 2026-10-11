@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /auth/*
 Disallow: /profile
-Sitemap: https://etsii.es/sitemap.ts
+Sitemap: https://etsii.es/sitemap.xml
