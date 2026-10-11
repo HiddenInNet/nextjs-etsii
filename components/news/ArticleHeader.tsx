@@ -59,7 +59,7 @@ export default function ArticleHeader({
     >
       {/* Metadatos (Categoría y Fecha) */}
       <div className="gsap-meta mb-6 flex flex-wrap items-center justify-between border-b-4 border-neutral-950 pb-2">
-        <span className="bg-purple-600 px-3 py-1 font-mono text-xs font-black text-white uppercase">
+        <span className="bg-pantone-201 px-3 py-1 font-mono text-xs font-black text-white uppercase">
           {frontmatter.category}
         </span>
         <span className="font-mono text-sm font-bold text-neutral-600 uppercase">
@@ -74,7 +74,7 @@ export default function ArticleHeader({
 
       {/* Extracto y Autor */}
       <div className="gsap-excerpt mb-10 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
-        <p className="max-w-2xl border-l-4 border-purple-600 pl-4 font-serif text-xl leading-relaxed font-medium text-neutral-700 sm:text-2xl">
+        <p className="max-w-2xl border-l-4 border-pantone-201 pl-4 font-serif text-xl leading-relaxed font-medium text-neutral-700 sm:text-2xl">
           {frontmatter.excerpt}
         </p>
         <div className="shrink-0 text-right">

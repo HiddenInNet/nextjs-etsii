@@ -14,14 +14,14 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     // 2. Subtítulos informáticos (Terminal vibe)
     h2: ({ children }) => (
       <h2 className="mt-10 mb-4 flex items-center gap-3 font-mono text-2xl font-bold tracking-wide text-neutral-950 uppercase">
-        <span className="text-purple-600">##</span>
+        <span className="text-pantone-201">##</span>
         {children}
       </h2>
     ),
 
     // 3. Subtítulos menores (Estilo sección de periódico)
     h3: ({ children }) => (
-      <h3 className="mt-8 mb-4 border-l-4 border-purple-600 pl-3 font-serif text-xl font-bold text-neutral-900 italic">
+      <h3 className="border-pantone-201 mt-8 mb-4 border-l-4 pl-3 font-serif text-xl font-bold text-neutral-900 italic">
         {children}
       </h3>
     ),
@@ -35,7 +35,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 
     // 5. Citas destacadas (Pull Quotes) - Neobrutalistas
     blockquote: ({ children }) => (
-      <blockquote className="my-10 border-4 border-neutral-950 bg-white p-6 font-serif text-xl font-medium text-neutral-900 italic md:shadow-[8px_8px_0_#0a0a0a] sm:p-8 sm:text-2xl">
+      <blockquote className="my-10 border-4 border-neutral-950 bg-white p-6 font-serif text-xl font-medium text-neutral-900 italic sm:p-8 sm:text-2xl md:shadow-[8px_8px_0_#0a0a0a]">
         {children}
       </blockquote>
     ),
@@ -48,7 +48,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
           href={href}
           target={isExternal ? "_blank" : "_self"}
           rel={isExternal ? "noopener noreferrer" : undefined}
-          className="border-b-2 border-purple-600 font-bold text-neutral-950 transition-colors hover:bg-purple-600 hover:text-white"
+          className="border-pantone-201 hover:bg-pantone-201 border-b-2 font-bold text-neutral-950 transition-colors hover:text-white"
         >
           {children}
         </a>
@@ -63,7 +63,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     li: ({ children }) => (
       <li className="flex items-start gap-3">
-        <span className="mt-1 font-mono text-sm font-black text-purple-600">
+        <span className="text-pantone-201 mt-1 font-mono text-sm font-black">
           {">"}
         </span>
         <span>{children}</span>

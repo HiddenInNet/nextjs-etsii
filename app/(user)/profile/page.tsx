@@ -1,4 +1,9 @@
 import ProfileContainer from "@/components/profile/ProfileContainer";
+import { Metadata } from "vinext/shims/metadata";
+
+export const metadata: Metadata = {
+  title: "Perfil personal",
+};
 
 export default function ProfilePage() {
   return (

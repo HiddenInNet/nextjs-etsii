@@ -54,7 +54,7 @@ export default async function NewsArticlePage({
   }
 
   return (
-    <main className="min-h-screen bg-neutral-100 px-4 pt-28 pb-16 font-mono text-neutral-950 selection:bg-purple-400 selection:text-black sm:px-6 lg:px-8">
+    <main className="selection:bg-pantone-542 min-h-screen bg-neutral-100 px-4 pt-28 pb-16 font-mono text-neutral-950 selection:text-black sm:px-6 lg:px-8">
       <div className="mx-auto max-w-4xl">
         <div className="mb-8">
           <Link

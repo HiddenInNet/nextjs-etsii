@@ -4,7 +4,7 @@ import { useRef } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 import { ArrowUpRight } from "lucide-react";
-import { NewsFrontmatter } from "@/app/(root)/news/page";
+import { NewsFrontmatter } from "@/utils/news/getAllNews";
 
 interface NewsCardProps {
   article: NewsFrontmatter;
@@ -19,7 +19,7 @@ export default function NewsCard({ article, isHeadliner }: NewsCardProps) {
       gsap.to(cardRef.current, {
         y: -6,
         boxShadow: "12px 12px 0 #0a0a0a",
-        borderColor: "#9333ea",
+        borderColor: "#a71c39",
         duration: 0.2,
         ease: "power2.out",
       });
@@ -57,7 +57,7 @@ export default function NewsCard({ article, isHeadliner }: NewsCardProps) {
     >
       {/* Metadatos superiores */}
       <div className="mb-4 flex flex-wrap items-center justify-between gap-2 border-b-2 border-neutral-950 pb-2">
-        <span className="bg-purple-600 px-2 py-1 font-mono text-[10px] font-bold text-white uppercase">
+        <span className="bg-pantone-201 px-2 py-1 font-mono text-xs font-bold text-white uppercase">
           {article.category}
         </span>
         <span className="font-mono text-xs font-bold text-neutral-600">
@@ -67,7 +67,7 @@ export default function NewsCard({ article, isHeadliner }: NewsCardProps) {
 
       {/* Titular */}
       <h2
-        className={`mb-4 font-serif leading-none font-black text-neutral-950 transition-colors group-hover:text-purple-700 ${
+        className={`group-hover:text-pantone-201 mb-4 font-serif leading-none font-black text-neutral-950 transition-colors ${
           isHeadliner
             ? "text-4xl sm:text-5xl lg:text-6xl"
             : "text-2xl sm:text-3xl"
@@ -78,17 +78,16 @@ export default function NewsCard({ article, isHeadliner }: NewsCardProps) {
 
       {/* Contenido (Imagen y Extracto) */}
       <div
-        className={`flex flex-grow flex-col gap-4 ${isHeadliner ? "sm:flex-row-reverse" : ""}`}
+        className={`flex grow flex-col gap-4 ${isHeadliner ? "sm:flex-row-reverse" : ""}`}
       >
         {/* Imagen Neobrutalista */}
         <div
-          className={`relative flex-shrink-0 overflow-hidden border-2 border-neutral-950 ${
+          className={`relative shrink-0 overflow-hidden border-2 border-neutral-950 ${
             isHeadliner
               ? "aspect-video sm:aspect-auto sm:w-1/2"
               : "aspect-video w-full"
           }`}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={article.cover_url}
             alt={`Portada para ${article.title}`}
@@ -98,7 +97,7 @@ export default function NewsCard({ article, isHeadliner }: NewsCardProps) {
         </div>
 
         {/* Extracto y botón de leer más */}
-        <div className="flex flex-grow flex-col justify-between">
+        <div className="flex grow flex-col justify-between">
           <p
             className={`font-serif leading-relaxed text-neutral-800 ${
               isHeadliner ? "text-lg font-medium lg:text-xl" : "text-sm"
@@ -108,7 +107,7 @@ export default function NewsCard({ article, isHeadliner }: NewsCardProps) {
           </p>
 
           <div className="mt-6 flex items-center gap-2 font-mono text-xs font-black text-neutral-950 uppercase">
-            <span className="border-b-2 border-transparent transition-colors group-hover:border-purple-600">
+            <span className="group-hover:border-pantone-201 border-b-2 border-transparent transition-colors">
               Leer Noticia Completa
             </span>
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />

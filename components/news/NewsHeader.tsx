@@ -45,7 +45,7 @@ export default function NewsHeader() {
 
       <div className="gsap-masthead mt-2 flex items-center justify-center gap-2 border-t-2 border-neutral-950 pt-3 text-sm font-bold uppercase">
         <Newspaper className="h-5 w-5" />
-        <span>Toda la actualidad en 0 y 1</span>
+        <span>Toda la actualidad de la ETSII</span>
         <Newspaper className="h-5 w-5" />
       </div>
     </header>

@@ -13,7 +13,7 @@ export default async function NewsPage() {
   const news = await getAllNews();
 
   return (
-    <main className="min-h-screen bg-neutral-100 px-4 pt-28 pb-16 font-mono text-neutral-950 selection:bg-purple-400 selection:text-black sm:px-6 lg:px-8">
+    <main className="min-h-screen bg-neutral-100 px-4 pt-28 pb-16 font-mono text-neutral-950 selection:bg-pantone-542 selection:text-black sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl space-y-10">
         <NewsHeader />
         <NewsGrid articles={news} />
