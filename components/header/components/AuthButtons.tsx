@@ -18,30 +18,33 @@ export default function AuthButtons() {
   return (
     <div className="hidden items-center gap-2 sm:flex">
       {isLoading ? (
-        <div className="h-9 w-28 animate-pulse rounded-xl border border-neutral-800 bg-neutral-900" />
+        <div className="h-9 w-28 animate-pulse rounded-xl border-2 border-neutral-950 bg-neutral-200" />
       ) : user ? (
         <div className="flex items-center gap-2">
+          {/* Tarjeta de Perfil del Usuario */}
           <Link
             href="/profile"
-            className="group flex items-center gap-2.5 rounded-xl border border-neutral-800 bg-neutral-900/90 px-3 py-1.5 transition-all hover:border-yellow-400/60 hover:bg-neutral-800/80"
+            className="group flex items-center gap-2.5 rounded-xl border-2 border-neutral-950 bg-white px-3 py-1.5 shadow-[2px_2px_0_#0a0a0a] transition-all"
           >
-            <div className="relative flex h-7 w-7 items-center justify-center rounded-lg border border-yellow-400/40 bg-yellow-400/10 font-mono text-xs font-bold text-yellow-400 uppercase">
+            <div className="relative flex h-7 w-7 items-center justify-center rounded-lg border-2 border-neutral-950 bg-yellow-300 font-mono text-xs font-bold text-neutral-950 uppercase">
               {user.name.charAt(0)}
-              <span className="absolute -right-0.5 -bottom-0.5 h-2 w-2 rounded-full bg-emerald-500 ring-2 ring-neutral-950" />
+              <span className="absolute -right-0.5 -bottom-0.5 h-2 w-2 rounded-full bg-emerald-500 ring-2 ring-white" />
             </div>
             <div className="flex flex-col text-left">
-              <span className="text-xs font-bold text-neutral-200 transition-colors group-hover:text-yellow-400">
+              <span className="text-xs font-bold uppercase text-neutral-950 transition-colors group-hover:text-neutral-700">
                 {user.name}
               </span>
-              <span className="font-mono text-[10px] text-neutral-400 capitalize">
+              <span className="font-mono text-[10px] text-neutral-600 capitalize">
                 {user.role}
               </span>
             </div>
           </Link>
+
+          {/* Botón de Cerrar Sesión */}
           <button
             onClick={handleLogout}
             title="Cerrar Sesión"
-            className="cursor-pointer rounded-xl border border-neutral-800 bg-neutral-900/90 p-2 text-neutral-400 transition-colors hover:border-red-500/40 hover:text-red-400"
+            className="cursor-pointer rounded-xl border-2 border-neutral-950 bg-red-100 p-2 text-red-700 shadow-[2px_2px_0_#0a0a0a] transition-all hover:bg-red-500 hover:text-white"
           >
             <LogOut className="h-4 w-4" />
           </button>
@@ -49,7 +52,7 @@ export default function AuthButtons() {
       ) : (
         <Link
           href="/auth/login"
-          className="inline-flex items-center gap-2 rounded-xl border border-yellow-400/40 bg-yellow-400/10 px-4 py-2 font-mono text-xs font-bold tracking-wider text-yellow-400 uppercase transition-all hover:bg-yellow-400 hover:text-neutral-950"
+          className="inline-flex items-center gap-2 rounded-xl border-2 border-neutral-950 bg-yellow-300 px-4 py-2 font-mono text-xs font-bold tracking-wider text-neutral-950 uppercase shadow-[2px_2px_0_#0a0a0a] transition-all hover:bg-yellow-400"
         >
           <LogIn className="h-4 w-4" />
           <span>Acceso</span>

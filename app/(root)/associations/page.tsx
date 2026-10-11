@@ -23,7 +23,7 @@ export default async function AssociationsPage() {
   }
 
   return (
-    <main className="min-h-screen bg-neutral-950 px-4 pt-28 pb-16 font-mono text-white sm:px-6 lg:px-8">
+    <main className="min-h-screen bg-neutral-200 px-4 pt-28 pb-16 font-mono text-black sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl space-y-10">
         <AssociationHero />
         <AssociationsGrid initialAssociations={associations || []} />

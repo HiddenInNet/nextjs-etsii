@@ -1,3 +1,4 @@
+// components/associations/AssociationHero.tsx
 "use client";
 
 import { useRef } from "react";
@@ -24,21 +25,25 @@ export default function AssociationHero() {
   return (
     <div
       ref={heroRef}
-      className="relative overflow-hidden rounded-2xl border-4 border-neutral-900 bg-neutral-900/80 p-8 shadow-[6px_6px_0_#202020] backdrop-blur-xl sm:p-10"
+      className="relative overflow-hidden rounded-2xl border-4 border-neutral-950 bg-white p-8 shadow-[6px_6px_0_#0a0a0a] backdrop-blur-xl sm:p-10"
     >
-      <div className="pointer-events-none absolute top-0 right-0 h-48 w-48 rounded-full bg-yellow-400/10 blur-3xl" />
 
       <div className="max-w-3xl space-y-4">
-        <div className="gsap-hero-anim inline-flex items-center gap-2 rounded-full border border-yellow-400/30 bg-yellow-400/10 px-3 py-1 text-xs font-bold tracking-wider text-yellow-400 uppercase">
-          <Terminal className="h-4 w-4" />
-          <span>// COMUNIDAD_ESTUDIANTIL</span>
+        {/* Badge superior */}
+        <div className="gsap-hero-anim inline-flex items-center gap-2 rounded-full border-2 border-neutral-950 bg-yellow-300 px-3 py-1 font-mono text-xs font-bold tracking-wider text-neutral-950 uppercase shadow-[2px_2px_0_#0a0a0a]">
+          <span>// ASOCIACIONES</span>
         </div>
 
-        <h1 className="gsap-hero-anim text-3xl font-black tracking-tight uppercase sm:text-5xl">
-          Asociaciones de la <span className="text-yellow-400">ETSII</span>
+        {/* Título Principal */}
+        <h1 className="gsap-hero-anim text-3xl font-black tracking-tight text-neutral-950 uppercase sm:text-5xl">
+          Asociaciones de la{" "}
+          <span className="inline-block rounded-lg border-2 border-neutral-950 bg-yellow-300 px-2 py-0.5 shadow-[2px_2px_0_#0a0a0a]">
+            ETSII
+          </span>
         </h1>
 
-        <p className="gsap-hero-anim font-sans text-sm leading-relaxed text-neutral-400 sm:text-base">
+        {/* Descripción */}
+        <p className="gsap-hero-anim font-sans text-sm leading-relaxed text-neutral-700 sm:text-base">
           Forma parte activa de la comunidad universitaria. Participa en
           proyectos, talleres, eventos tecnológicos y conecta con otros
           estudiantes.

@@ -1,3 +1,4 @@
+// components/associations/AssociationCard.tsx
 "use client";
 
 import { useRef, useState } from "react";
@@ -30,13 +31,13 @@ export default function AssociationCard({
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Animaciones de hover en la tarjeta
+  // Animaciones de hover en la tarjeta ajustadas al tema claro
   const handleMouseEnter = () => {
     if (cardRef.current) {
       gsap.to(cardRef.current, {
         y: -4,
-        boxShadow: "10px 10px 0 #202020",
-        borderColor: "rgba(250, 204, 21, 0.4)",
+        boxShadow: "10px 10px 0 #0a0a0a",
+        borderColor: "#0a0a0a",
         duration: 0.2,
         ease: "power2.out",
       });
@@ -47,8 +48,8 @@ export default function AssociationCard({
     if (cardRef.current) {
       gsap.to(cardRef.current, {
         y: 0,
-        boxShadow: "6px 6px 0 #202020",
-        borderColor: "rgba(23, 23, 23, 1)",
+        boxShadow: "6px 6px 0 #0a0a0a",
+        borderColor: "#0a0a0a",
         duration: 0.2,
         ease: "power2.out",
       });
@@ -131,15 +132,15 @@ export default function AssociationCard({
       ref={cardRef}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="flex h-full flex-col justify-between rounded-2xl border-4 border-neutral-900 bg-neutral-900/70 p-6 shadow-[6px_6px_0_#202020] transition-colors"
+      className="flex h-full flex-col justify-between rounded-2xl border-4 border-neutral-950 bg-white p-6 shadow-[6px_6px_0_#0a0a0a] transition-colors"
     >
       <div className="space-y-4">
         <div className="flex items-start justify-between gap-3">
           <div className="space-y-1">
-            <span className="inline-block rounded-md border border-yellow-400/40 bg-yellow-400/10 px-2.5 py-0.5 font-mono text-[10px] font-bold text-yellow-400 uppercase">
+            <span className="inline-block rounded-md border-2 border-neutral-950 bg-yellow-300 px-2.5 py-0.5 font-mono text-[10px] font-bold text-neutral-950 uppercase shadow-[2px_2px_0_#0a0a0a]">
               #{association.slug}
             </span>
-            <h3 className="font-mono text-xl font-black tracking-wide text-white uppercase">
+            <h3 className="font-mono text-xl font-black tracking-wide text-neutral-950 uppercase">
               {association.name}
             </h3>
           </div>
@@ -150,28 +151,28 @@ export default function AssociationCard({
               target="_blank"
               rel="noopener noreferrer"
               title="Visitar sitio web"
-              className="rounded-lg border border-neutral-800 bg-neutral-950 p-2 text-neutral-400 transition-colors hover:border-yellow-400/50 hover:text-yellow-400"
+              className="rounded-lg border-2 border-neutral-950 bg-neutral-100 p-2 text-neutral-950 shadow-[2px_2px_0_#0a0a0a] transition-all hover:translate-x-0.5 hover:translate-y-0.5 hover:bg-yellow-300 hover:shadow-none"
             >
               <ExternalLink className="h-4 w-4" />
             </a>
           )}
         </div>
 
-        <p className="line-clamp-3 font-sans text-xs leading-relaxed text-neutral-400">
+        <p className="line-clamp-3 font-sans text-xs leading-relaxed text-neutral-700">
           {association.description ||
             "Sin descripción disponible por el momento."}
         </p>
       </div>
 
-      <div className="mt-6 border-t border-neutral-800/80 pt-4">
+      <div className="mt-6 border-t-2 border-neutral-950 pt-4">
         <button
           ref={buttonRef}
           onClick={handleButtonClick}
           disabled={isLoadingMembership || isSubmitting}
-          className={`flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl border-2 px-4 py-2.5 font-mono text-xs font-bold tracking-wider uppercase transition-colors disabled:opacity-50 ${
+          className={`flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl border-2 border-neutral-950 px-4 py-2.5 font-mono text-xs font-bold tracking-wider uppercase shadow-[3px_3px_0_#0a0a0a] transition-all hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none disabled:opacity-50 ${
             isJoined
-              ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-400 hover:border-red-500/40 hover:bg-red-500/10 hover:text-red-400"
-              : "border-neutral-900 bg-yellow-400 text-neutral-950 shadow-[3px_3px_0_#202020] hover:bg-yellow-300"
+              ? "bg-emerald-100 text-emerald-900 hover:bg-red-100 hover:text-red-900"
+              : "bg-yellow-300 text-neutral-950 hover:bg-yellow-400"
           }`}
         >
           {isSubmitting || isLoadingMembership ? (
@@ -181,7 +182,7 @@ export default function AssociationCard({
             </>
           ) : isJoined ? (
             <>
-              <CheckCircle2 className="h-4 w-4" />
+              <CheckCircle2 className="h-4 w-4 text-emerald-700" />
               <span>Miembro (Cancelar)</span>
             </>
           ) : (

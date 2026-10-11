@@ -1,3 +1,4 @@
+// app/auth/login/page.tsx (o components/auth/LoginPage.tsx)
 "use client";
 
 import React, { useState } from "react";
@@ -18,7 +19,6 @@ export default function LoginPage() {
     e.preventDefault();
     setIsLoading(true);
 
-    // 1. Validación básica de campos vacíos
     if (!email.trim() || !password.trim()) {
       showToast(
         "error",
@@ -40,14 +40,12 @@ export default function LoginPage() {
     }
 
     try {
-      // 2. Iniciar sesión en Supabase con correo y contraseña
       const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password,
       });
 
       if (error) {
-        // Manejo de errores comunes de Supabase
         if (error.message.includes("Invalid login credentials")) {
           throw new Error("El correo o la contraseña son incorrectos.");
         }
@@ -80,17 +78,17 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center p-4 bg-neutral-950 font-mono text-white">
-      <div className="w-full max-w-md rounded-2xl border-4 border-neutral-900 bg-neutral-900/90 p-6 sm:p-8 shadow-[6px_6px_0_#202020] backdrop-blur-xl">
+    <div className="flex min-h-screen w-full items-center justify-center bg-neutral-100 p-4 font-mono text-neutral-950">
+      <div className="w-full max-w-md rounded-2xl border-4 border-neutral-950 bg-white p-6 shadow-[8px_8px_0_#0a0a0a] sm:p-8">
         {/* Encabezado del Formulario */}
-        <div className="flex flex-col gap-2 border-b-2 border-neutral-800 pb-6 mb-6">
-          <div className="inline-flex items-center gap-2 rounded-full border border-yellow-400/30 bg-neutral-950 px-3 py-1 text-xs text-yellow-400 w-fit">
+        <div className="mb-6 flex flex-col gap-2 border-b-2 border-neutral-950 pb-6">
+          <div className="inline-flex w-fit items-center gap-2 rounded-full border-2 border-neutral-950 bg-yellow-300 px-3 py-1 text-xs font-bold text-neutral-950 shadow-[2px_2px_0_#0a0a0a]">
             <span>// ACCESO_SISTEMA</span>
           </div>
-          <h1 className="text-2xl font-extrabold tracking-tight text-white uppercase">
+          <h1 className="text-2xl font-black tracking-tight text-neutral-950 uppercase">
             Iniciar Sesión
           </h1>
-          <p className="text-xs text-neutral-400 font-sans">
+          <p className="font-sans text-xs text-neutral-700">
             Introduce tus credenciales universitarias de la ETSII para
             continuar.
           </p>
@@ -99,41 +97,41 @@ export default function LoginPage() {
         {/* Formulario de Login */}
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 font-sans">
           <div className="space-y-1">
-            <label className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-300">
+            <label className="font-mono text-xs font-bold tracking-wider text-neutral-950 uppercase">
               Correo Electrónico
             </label>
             <div className="relative flex items-center">
-              <Mail className="absolute left-3.5 h-4 w-4 text-neutral-400" />
+              <Mail className="absolute left-3.5 h-4 w-4 text-neutral-600" />
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="usuario@alum.us.es"
-                className="w-full rounded-xl border-2 border-neutral-800 bg-neutral-950 py-2.5 pl-10 pr-4 text-xs font-mono text-white placeholder-neutral-500 focus:border-yellow-400 focus:outline-none transition-colors"
+                className="w-full rounded-xl border-2 border-neutral-950 bg-white py-2.5 pr-4 pl-10 font-mono text-xs text-neutral-950 placeholder-neutral-400 transition-colors focus:border-neutral-950 focus:ring-2 focus:ring-yellow-300 focus:outline-none"
               />
             </div>
           </div>
 
           <div className="space-y-1">
-            <div className="flex justify-between items-center">
-              <label className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-300">
+            <div className="flex items-center justify-between">
+              <label className="font-mono text-xs font-bold tracking-wider text-neutral-950 uppercase">
                 Contraseña
               </label>
               <Link
                 href="/auth/forgot-password"
-                className="text-[11px] font-mono text-yellow-400 hover:underline"
+                className="font-mono text-[11px] font-bold text-neutral-800 hover:underline"
               >
                 ¿Olvidaste la clave?
               </Link>
             </div>
             <div className="relative flex items-center">
-              <Lock className="absolute left-3.5 h-4 w-4 text-neutral-400" />
+              <Lock className="absolute left-3.5 h-4 w-4 text-neutral-600" />
               <input
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full rounded-xl border-2 border-neutral-800 bg-neutral-950 py-2.5 pl-10 pr-4 text-xs font-mono text-white placeholder-neutral-500 focus:border-yellow-400 focus:outline-none transition-colors"
+                className="w-full rounded-xl border-2 border-neutral-950 bg-white py-2.5 pr-4 pl-10 font-mono text-xs text-neutral-950 placeholder-neutral-400 transition-colors focus:border-neutral-950 focus:ring-2 focus:ring-yellow-300 focus:outline-none"
               />
             </div>
           </div>
@@ -141,7 +139,7 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={isLoading}
-            className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl border-2 border-neutral-900 bg-yellow-400 px-4 py-3 font-mono text-xs font-bold uppercase tracking-wider text-neutral-950 shadow-[3px_3px_0_#202020] transition-all hover:bg-yellow-300 active:translate-x-0.5 active:translate-y-0.5 disabled:opacity-50"
+            className="mt-2 flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl border-2 border-neutral-950 bg-yellow-300 px-4 py-3 font-mono text-xs font-bold tracking-wider text-neutral-950 uppercase shadow-[3px_3px_0_#0a0a0a] transition-all hover:bg-yellow-400 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none disabled:opacity-50"
           >
             {isLoading ? (
               <span>Autenticando...</span>
@@ -155,11 +153,11 @@ export default function LoginPage() {
         </form>
 
         {/* Footer / Link a Registro */}
-        <div className="mt-6 border-t-2 border-neutral-800 pt-4 text-center font-mono text-xs text-neutral-400">
+        <div className="mt-6 border-t-2 border-neutral-950 pt-4 text-center font-mono text-xs text-neutral-700">
           <span>¿No tienes una cuenta? </span>
           <Link
             href="/auth/register"
-            className="font-bold text-yellow-400 hover:underline inline-flex items-center gap-1"
+            className="inline-flex items-center gap-1 font-bold text-neutral-950 hover:underline"
           >
             Regístrate <ArrowRight className="h-3 w-3" />
           </Link>

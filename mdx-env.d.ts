@@ -1,12 +1,10 @@
+import { Frontmatter } from "./types/news/article.interface";
+
 // mdx-env.d.ts
 declare module "*.mdx" {
   import type { ComponentType } from "react";
 
-  export const frontmatter: {
-    title?: string;
-    date?: string;
-    [key: string]: any;
-  };
+  export const frontmatter: Frontmatter;
 
   const MDXComponent: ComponentType<any>;
   export default MDXComponent;

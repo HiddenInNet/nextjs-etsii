@@ -40,7 +40,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
       {children}
 
       {/* Contenedor flotante para los Toasts */}
-      <div className="fixed right-5 bottom-5 z-50 flex w-full max-w-sm flex-col gap-3 px-4 font-mono">
+      <div className="fixed md:right-5 bottom-5 z-50 flex w-full max-w-sm flex-col gap-3 px-4 font-mono">
         {toasts.map((toast) => (
           <div
             key={toast.id}

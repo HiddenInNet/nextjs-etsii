@@ -1,3 +1,4 @@
+// components/degrees/DegreeCard.tsx
 "use client";
 
 import { useRef } from "react";
@@ -22,8 +23,8 @@ export default function DegreeCard({
     if (cardRef.current && !isSelected) {
       gsap.to(cardRef.current, {
         y: -4,
-        boxShadow: "10px 10px 0 #202020",
-        borderColor: "rgba(16, 185, 129, 0.4)", // emerald-500
+        boxShadow: "10px 10px 0 #0a0a0a",
+        borderColor: "#0a0a0a",
         duration: 0.2,
         ease: "power2.out",
       });
@@ -34,8 +35,8 @@ export default function DegreeCard({
     if (cardRef.current && !isSelected) {
       gsap.to(cardRef.current, {
         y: 0,
-        boxShadow: "6px 6px 0 #202020",
-        borderColor: "rgba(23, 23, 23, 1)", // neutral-900
+        boxShadow: "6px 6px 0 #0a0a0a",
+        borderColor: "#0a0a0a",
         duration: 0.2,
         ease: "power2.out",
       });
@@ -48,46 +49,40 @@ export default function DegreeCard({
       onClick={onClick}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`group flex h-full cursor-pointer flex-col justify-between rounded-2xl border-4 p-6 transition-colors ${
+      className={`group flex h-full cursor-pointer flex-col justify-between rounded-2xl border-4 p-6 transition-all ${
         isSelected
-          ? "border-emerald-500 bg-emerald-500 text-neutral-950 shadow-[6px_6px_0_#10b981] hover:bg-emerald-400"
-          : "border-neutral-900 bg-neutral-900/70 shadow-[6px_6px_0_#202020]"
+          ? "border-neutral-950 bg-emerald-300 text-neutral-950 shadow-[6px_6px_0_#0a0a0a]"
+          : "border-neutral-950 bg-white text-neutral-950 shadow-[6px_6px_0_#0a0a0a]"
       }`}
     >
       <div className="space-y-4">
         <div className="flex items-center justify-between">
           <div
-            className={`inline-flex items-center justify-center rounded-xl border-2 p-2.5 ${
+            className={`inline-flex items-center justify-center rounded-xl border-2 border-neutral-950 p-2.5 shadow-[2px_2px_0_#0a0a0a] ${
               isSelected
-                ? "border-neutral-950 bg-neutral-950/10 text-neutral-950"
-                : "border-emerald-500 bg-emerald-500/10 text-emerald-400"
+                ? "bg-white text-neutral-950"
+                : "bg-emerald-200 text-emerald-900"
             }`}
           >
             <GraduationCap className="h-6 w-6" />
           </div>
-          <span
-            className={`font-mono text-xs font-bold uppercase ${isSelected ? "text-neutral-800" : "text-neutral-500"}`}
-          >
+          <span className="rounded-md border-2 border-neutral-950 bg-neutral-100 px-2 py-0.5 font-mono text-xs font-bold text-neutral-800 uppercase shadow-[2px_2px_0_#0a0a0a]">
             {degree.total_credits ? `${degree.total_credits} ECTS` : "Grado"}
           </span>
         </div>
 
-        <h3
-          className={`font-mono text-xl font-black tracking-wide uppercase ${isSelected ? "text-neutral-950" : "text-white"}`}
-        >
+        <h3 className="font-mono text-xl font-black tracking-wide text-neutral-950 uppercase">
           {degree.name}
         </h3>
 
-        <p
-          className={`line-clamp-3 font-sans text-xs leading-relaxed ${isSelected ? "text-neutral-800" : "text-neutral-400"}`}
-        >
+        <p className="line-clamp-3 font-sans text-xs leading-relaxed text-neutral-700">
           {degree.description ||
             "Información del plan de estudios no disponible."}
         </p>
       </div>
 
-      <div className="mt-6 flex items-center justify-between border-t border-current pt-4 opacity-80">
-        <span className="font-mono text-xs font-bold uppercase">
+      <div className="mt-6 flex items-center justify-between border-t-2 border-neutral-950 pt-4">
+        <span className="font-mono text-xs font-bold text-neutral-900 uppercase">
           {isSelected ? "Cerrar Asignaturas" : "Ver Asignaturas"}
         </span>
         <ArrowRight

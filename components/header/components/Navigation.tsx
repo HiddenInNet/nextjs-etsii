@@ -9,17 +9,17 @@ export default function Navigation() {
   const pathname = usePathname();
 
   return (
-    <nav className="hidden items-center gap-1 rounded-full border border-neutral-800 bg-neutral-900/60 p-1.5 backdrop-blur-sm md:flex">
+    <nav className="hidden items-center gap-1 rounded-full border-2 border-neutral-950 bg-white px-2 py-1.5 shadow-[2px_2px_0_#0a0a0a] md:flex">
       {navlinks.map((link) => {
         const isActive = pathname === link.href;
         return (
           <Link
             key={link.href}
             href={link.href}
-            className={`rounded-full px-4 py-2 text-xs font-semibold tracking-wider uppercase ${
+            className={`rounded-full px-4 py-2 font-mono text-xs font-bold tracking-wider uppercase transition-all ${
               isActive
-                ? "border border-yellow-400/30 bg-yellow-400/10 text-yellow-400"
-                : "text-neutral-300 hover:bg-neutral-800/50 hover:text-yellow-400"
+                ? "border-2 border-neutral-950 bg-yellow-300 text-neutral-950 shadow-[2px_2px_0_#0a0a0a]"
+                : "text-neutral-800 hover:bg-neutral-200 hover:text-neutral-950"
             }`}
           >
             {link.name}

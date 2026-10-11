@@ -107,7 +107,7 @@ export default function ProfileContainer() {
   if (isAuthLoading || !profile || !user) {
     return (
       <div className="flex h-64 w-full items-center justify-center">
-        <div className="flex items-center gap-3 rounded-xl border-2 border-neutral-800 bg-neutral-900 p-6 shadow-lg">
+        <div className="flex items-center gap-3 rounded-xl border-2 border-neutral-800 bg-white p-6 shadow-lg">
           <Loader2 className="h-6 w-6 animate-spin text-yellow-400" />
           <span className="text-sm">Cargando datos del perfil...</span>
         </div>

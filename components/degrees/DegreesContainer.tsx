@@ -1,3 +1,4 @@
+// components/degrees/DegreesContainer.tsx
 "use client";
 
 import { useState, useRef } from "react";
@@ -15,7 +16,6 @@ export interface Degree {
   total_credits?: number;
 }
 
-// Nueva interfaz adaptada a la relación de Supabase
 export interface DegreeSubject {
   year: number;
   term: number;
@@ -69,7 +69,6 @@ export default function DegreesContainer({
     setIsLoadingSubjects(true);
 
     try {
-      // Consulta a la tabla intermedia haciendo JOIN (relación) con subjects
       const { data, error } = await supabase
         .from("degree_subjects")
         .select(
@@ -91,7 +90,6 @@ export default function DegreesContainer({
 
       if (error) throw error;
 
-      // En Supabase, si la relación es 1 a 1 en el JOIN, 'subject' es un objeto, no un array.
       setDegreeSubjects((data as any) || []);
 
       setTimeout(() => {
@@ -107,8 +105,19 @@ export default function DegreesContainer({
     }
   };
 
+  if (initialDegrees.length === 0) {
+    return (
+      <div className="rounded-2xl border-2 border-dashed border-neutral-950 bg-white p-12 text-center shadow-[4px_4px_0_#0a0a0a]">
+        <p className="font-mono text-sm font-bold text-neutral-700 uppercase">
+          No hay titulaciones registradas actualmente en el sistema.
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div ref={containerRef} className="space-y-12">
+      {/* Grid de Grados */}
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {initialDegrees.map((degree) => (
           <div key={degree.id} className="gsap-degree-card">
@@ -121,6 +130,7 @@ export default function DegreesContainer({
         ))}
       </div>
 
+      {/* Sección dinámica de Asignaturas de la titulación seleccionada */}
       <div ref={subjectsSectionRef}>
         {selectedDegree && (
           <SubjectsList

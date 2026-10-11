@@ -4,8 +4,8 @@ import { ArrowLeft } from "lucide-react";
 import ArticleHeader from "@/components/news/ArticleHeader";
 import ArticleContent from "@/components/news/ArticleContent";
 import { MDXContent } from "@/components/mdx/mdx-content";
+import { Article } from "@/types/news/article.interface";
 
-// Añadimos manejo de errores por si el archivo no existe
 async function getArticleData(slug: string) {
   try {
     const { default: Post, frontmatter } = await import(
@@ -22,15 +22,18 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
-  const article = await getArticleData(params.slug);
+  const article: Article = await getArticleData(params.slug);
 
   if (!article.frontmatter) {
-    return { title: "Noticia no encontrada | The ETSII Gazette" };
+    return { title: "Noticia no encontrada | ETSII" };
   }
 
   return {
-    title: `${article.frontmatter.title} | The ETSII Gazette`,
+    title: `${article.frontmatter.title} | ETSII`,
     description: article.frontmatter.excerpt,
+    authors: {
+      name: `${article.frontmatter.author}`,
+    },
   };
 }
 

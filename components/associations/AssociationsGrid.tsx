@@ -1,3 +1,4 @@
+// components/associations/AssociationsGrid.tsx
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -88,8 +89,8 @@ export default function AssociationsGrid({
 
   if (initialAssociations.length === 0) {
     return (
-      <div className="rounded-2xl border-2 border-dashed border-neutral-800 p-12 text-center">
-        <p className="font-mono text-sm text-neutral-400">
+      <div className="rounded-2xl border-2 border-dashed border-neutral-950 bg-white p-12 text-center shadow-[4px_4px_0_#0a0a0a]">
+        <p className="font-mono text-sm font-bold text-neutral-700">
           No hay asociaciones registradas actualmente en el sistema.
         </p>
       </div>
