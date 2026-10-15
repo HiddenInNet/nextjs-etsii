@@ -122,11 +122,11 @@ export default function ProfileContainer() {
         userId={user.id}
         onProfileUpdate={setProfile}
       />
+      <SubjectsSection />
       <AssociationsSection
         memberships={memberships}
         isLoadingAssocs={isLoadingAssocs}
       />
-      <SubjectsSection />
     </>
   );
 }

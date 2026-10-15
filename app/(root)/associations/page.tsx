@@ -5,7 +5,7 @@ import AssociationsGrid from "@/components/associations/AssociationsGrid";
 import { cookies } from "vinext/shims/headers";
 
 export const metadata: Metadata = {
-  title: "ETSII APP - Asociaciones",
+  title: "Asociaciones - ETSII APP",
   description:
     "Explora e inscríbete en las asociaciones estudiantiles de la ETSII Universidad de Sevilla.",
 };

@@ -4,14 +4,14 @@ import FeaturesSection from "@/components/home/FeaturesSection";
 import BackgroundSVG from "@/components/utils/BackgroundSVG";
 
 export const metadata: Metadata = {
-  title: "ETSII APP - Escuela Técnica Superior de Ingeniería Informática",
+  title: "Escuela Técnica Superior de Ingeniería Informática - ETSII APP",
   description:
     "Gestiona tus asignaturas, explora asociaciones estudiantiles y conecta con la comunidad de la Escuela Técnica Superior de Ingeniería Informática.",
   keywords: ["ETSII", "etsii", "universidad", "sevilla", "informática"],
   openGraph: {
     url: "https://etsii.es",
     type: "website",
-    title: "ETSII APP - Escuela Técnica Superior de Ingeniería Informática",
+    title: "Escuela Técnica Superior de Ingeniería Informática - ETSII APP",
     description:
       "Gestiona tus asignaturas, explora asociaciones estudiantiles y conecta con la comunidad de la Escuela Técnica Superior de Ingeniería Informática.",
     images: [
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ETSII APP - Escuela Técnica Superior de Ingeniería Informática",
+    title: "Escuela Técnica Superior de Ingeniería Informática - ETSII APP",
     description:
       "Gestiona tus asignaturas, explora asociaciones estudiantiles y conecta con la comunidad de la Escuela Técnica Superior de Ingeniería Informática.",
     creator: "@etsii",

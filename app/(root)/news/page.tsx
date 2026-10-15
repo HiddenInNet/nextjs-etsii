@@ -4,7 +4,7 @@ import NewsGrid from "@/components/news/NewsGrid";
 import { getAllNews } from "@/utils/news/getAllNews";
 
 export const metadata: Metadata = {
-  title: "ETSII APP - Noticias",
+  title: "Noticias - ETSII APP",
   description: "Últimas novedades, artículos y reportajes de la Escuela.",
 };
 

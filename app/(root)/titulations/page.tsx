@@ -5,7 +5,7 @@ import DegreesContainer from "@/components/degrees/DegreesContainer";
 import { cookies } from "vinext/shims/headers";
 
 export const metadata: Metadata = {
-  title: "ETSII APP - Titulaciones",
+  title: "Titulaciones - ETSII APP",
   description: "Explora los grados y asignaturas impartidas en la ETSII.",
 };
 
