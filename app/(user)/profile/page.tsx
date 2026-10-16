@@ -3,6 +3,9 @@ import { Metadata } from "vinext/shims/metadata";
 
 export const metadata: Metadata = {
   title: "Perfil personal",
+  robots: {
+    index: false,
+  },
 };
 
 export default function ProfilePage() {

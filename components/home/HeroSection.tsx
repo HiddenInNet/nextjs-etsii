@@ -29,7 +29,9 @@ export default function HeroSection() {
       ref={containerRef}
       className="relative flex min-h-[70vh] flex-col items-center justify-center px-4 text-center sm:px-6 lg:px-8"
     >
-      <h2 className="absolute top-12 md:top-20 font-bold text-2xl md:text-4xl text-pantone-201 uppercase animate-pulse">Web en desarrollo</h2>
+      <h2 className="text-pantone-201 absolute top-12 animate-pulse text-2xl font-bold uppercase md:top-20 md:text-4xl">
+        Web en desarrollo
+      </h2>
 
       <h1 className="gsap-hero-item text-pantone-553 mx-auto max-w-4xl bg-linear-to-r bg-clip-text text-4xl font-extrabold tracking-tighter uppercase sm:text-6xl lg:text-7xl">
         {/* Escuela Técnica Superior de Ingeniería Informática */}
@@ -47,7 +49,7 @@ export default function HeroSection() {
           href={user ? "/profile" : "/auth/register"}
           className="group inline-flex items-center gap-2 rounded-xl border-4 border-neutral-900 bg-yellow-400 px-6 py-3 font-mono text-sm font-bold tracking-wider text-neutral-950 uppercase shadow-[6px_6px_0_#202020] transition-all hover:bg-yellow-300 active:translate-x-1 active:translate-y-1 active:shadow-[0_0_0_#202020]"
         >
-          <span>Comenzar Ahora</span>
+          <span>{user ? "Personaliza tu perfil" : "Comenzar Ahora"}</span>
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
         </Link>
         <Link

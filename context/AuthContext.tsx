@@ -3,7 +3,7 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { supabase } from "@/utils/supabase/client";
 
-interface UserProfile {
+export interface UserProfile {
   id: string;
   name: string;
   email: string;

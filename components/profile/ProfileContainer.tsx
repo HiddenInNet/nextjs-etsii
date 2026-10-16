@@ -8,7 +8,7 @@ import { useToast } from "@/components/toast/ToastContext";
 import { supabase } from "@/utils/supabase/client";
 import ProfileHeader from "@/components/profile/ProfileHeader";
 import AssociationsSection from "@/components/profile/AssociationsSection";
-import SubjectsSection from "@/components/profile/SubjectsSection";
+import SubjectsSection from "@/components/profile/subjects/SubjectsSection";
 
 export interface ProfileData {
   full_name: string;

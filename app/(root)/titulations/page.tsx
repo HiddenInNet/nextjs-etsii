@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { createClient } from "@/utils/supabase/server"; // o "@/utils/supabase/server" según tu config
+import { createClient } from "@/utils/supabase/server";
 import DegreesHero from "@/components/degrees/DegreesHero";
 import DegreesContainer from "@/components/degrees/DegreesContainer";
 import { cookies } from "vinext/shims/headers";
